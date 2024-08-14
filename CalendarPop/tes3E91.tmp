@@ -1,0 +1,708 @@
+[gd_scene load_steps=21 format=3 uid="uid://dubkw6fn2rh5c"]
+
+[ext_resource type="Script" path="res://CalendarPop/test.gd" id="1_asykr"]
+[ext_resource type="Texture2D" uid="uid://c7f23gmik4tr7" path="res://CalendarPop/Back.png" id="2_jqf1h"]
+[ext_resource type="Texture2D" uid="uid://ktvjpyun302" path="res://CalendarPop/Forward.png" id="3_vgpa6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vle2"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34q3r"]
+content_margin_left = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.972549, 0.972549, 0.972549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e5tg"]
+content_margin_left = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.972549, 0.972549, 0.972549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0s2o"]
+content_margin_left = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.972549, 0.972549, 0.972549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.835294, 0.870588, 0.996078, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdoxd"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_q70wn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74k2f"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.972549, 0.972549, 0.972549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sd6xg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8t15"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.977937, 0.977937, 0.977937, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5rio"]
+bg_color = Color(0.972549, 0.972549, 0.972549, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adx6g"]
+bg_color = Color(0.912289, 0.912289, 0.912289, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbxdd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ypqf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d04lu"]
+bg_color = Color(0.356863, 0.490196, 0.984314, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bem4"]
+bg_color = Color(0.431971, 0.561804, 0.989793, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_erv5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1uaw"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asykr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.964706, 0.937255, 0.796078, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 68.0
+offset_right = 390.0
+offset_bottom = 103.0
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 113.0
+offset_right = 390.0
+offset_bottom = 504.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3vle2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CurrentDateTime" type="VBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/CurrentDateTime"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
+[node name="SelecteDateLabel" type="Label" parent="Panel/VBoxContainer/CurrentDateTime/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.25098, 0.301961, 0.380392, 1)
+theme_override_font_sizes/font_size = 15
+text = "Tuesday, August 13, 2024"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/CurrentDateTime"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="CurrentTimeLabel" type="Label" parent="Panel/VBoxContainer/CurrentDateTime/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.25098, 0.301961, 0.380392, 1)
+theme_override_font_sizes/font_size = 12
+text = "03:04:06 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateShortCutsBox" type="HBoxContainer" parent="Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/DateShortCutsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47451, 0.501961, 0.552941, 1)
+theme_override_colors/font_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.47451, 0.501961, 0.552941, 1)
+theme_override_colors/font_focus_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_34q3r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3e5tg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j0s2o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gdoxd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_j0s2o")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_q70wn")
+text = "Today"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/DateShortCutsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47451, 0.501961, 0.552941, 1)
+theme_override_colors/font_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.47451, 0.501961, 0.552941, 1)
+theme_override_colors/font_focus_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_34q3r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3e5tg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j0s2o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gdoxd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_j0s2o")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_q70wn")
+text = "Custom"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer/DateShortCutsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47451, 0.501961, 0.552941, 1)
+theme_override_colors/font_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.47451, 0.501961, 0.552941, 1)
+theme_override_colors/font_focus_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_34q3r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3e5tg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j0s2o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gdoxd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_j0s2o")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_q70wn")
+text = "Tomorrow"
+
+[node name="MonthYear" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/VBoxContainer/MonthYear"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_74k2f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MonthYear/PanelContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LeftMonth" type="Button" parent="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 17)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sd6xg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sd6xg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sd6xg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sd6xg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sd6xg")
+flat = true
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth"]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -8.5
+offset_right = 8.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8t15")
+
+[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth/Panel"]
+modulate = Color(0.458824, 0.490196, 0.541176, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jqf1h")
+expand_mode = 1
+
+[node name="CurrentDateLabel" type="Label" parent="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.25098, 0.301961, 0.380392, 1)
+theme_override_font_sizes/font_size = 12
+text = "August, 2021"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectMonth" type="Button" parent="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/CurrentDateLabel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="RightMonth" type="Button" parent="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 17)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sd6xg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sd6xg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sd6xg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sd6xg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sd6xg")
+flat = true
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth"]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -8.5
+offset_right = 8.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8t15")
+
+[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth/Panel"]
+modulate = Color(0.458824, 0.490196, 0.541176, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vgpa6")
+expand_mode = 1
+
+[node name="DateTable" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Days" type="HBoxContainer" parent="Panel/VBoxContainer/DateTable"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/DateTable/Days"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Mo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/DateTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Tu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/DateTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "We"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel/VBoxContainer/DateTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Th"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Panel/VBoxContainer/DateTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Fr"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Panel/VBoxContainer/DateTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Sa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Panel/VBoxContainer/DateTable/Days"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Su"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateGrid" type="GridContainer" parent="Panel/VBoxContainer/DateTable"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 7
+
+[node name="DateShortCutsBox2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Cancel" type="Button" parent="Panel/VBoxContainer/DateShortCutsBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_pressed_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_hover_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_focus_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_disabled_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5rio")
+theme_override_styles/hover = SubResource("StyleBoxFlat_adx6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5rio")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rbxdd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ypqf")
+text = "Cancel"
+
+[node name="Confirm" type="Button" parent="Panel/VBoxContainer/DateShortCutsBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_d04lu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2bem4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d04lu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_erv5s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g1uaw")
+text = "Confirm"
+
+[node name="ChooseMonthYear" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 113.0
+offset_right = 664.0
+offset_bottom = 504.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3vle2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChooseMonthYear"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CurrentDateTime" type="VBoxContainer" parent="ChooseMonthYear/VBoxContainer"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="ChooseMonthYear/VBoxContainer/CurrentDateTime"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
+[node name="SelecteDateLabel" type="Label" parent="ChooseMonthYear/VBoxContainer/CurrentDateTime/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.25098, 0.301961, 0.380392, 1)
+theme_override_font_sizes/font_size = 15
+text = "Choose Year and Month"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YearBox" type="HBoxContainer" parent="ChooseMonthYear/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ChooseMonthYear/VBoxContainer/YearBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_74k2f")
+
+[node name="YearScroll" type="ScrollContainer" parent="ChooseMonthYear/VBoxContainer/YearBox/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+follow_focus = true
+scroll_vertical_custom_step = 1.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="YearCon" type="VBoxContainer" parent="ChooseMonthYear/VBoxContainer/YearBox/PanelContainer/YearScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="YearButton" type="Button" parent="ChooseMonthYear/VBoxContainer/YearBox/PanelContainer/YearScroll/YearCon"]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "1947"
+flat = true
+
+[node name="TestButton" type="Button" parent="ChooseMonthYear/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="MonthTable" type="VBoxContainer" parent="ChooseMonthYear/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Days" type="HBoxContainer" parent="ChooseMonthYear/VBoxContainer/MonthTable"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="ChooseMonthYear/VBoxContainer/MonthTable/Days"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Mo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ChooseMonthYear/VBoxContainer/MonthTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Tu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="ChooseMonthYear/VBoxContainer/MonthTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "We"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="ChooseMonthYear/VBoxContainer/MonthTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Th"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="ChooseMonthYear/VBoxContainer/MonthTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Fr"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="ChooseMonthYear/VBoxContainer/MonthTable/Days"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Sa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="ChooseMonthYear/VBoxContainer/MonthTable/Days"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 10
+text = "Su"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateGrid" type="GridContainer" parent="ChooseMonthYear/VBoxContainer/MonthTable"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 7
+
+[node name="DateShortCutsBox2" type="HBoxContainer" parent="ChooseMonthYear/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Cancel" type="Button" parent="ChooseMonthYear/VBoxContainer/DateShortCutsBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_pressed_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_hover_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_focus_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_colors/font_disabled_color = Color(0.458824, 0.490196, 0.541176, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5rio")
+theme_override_styles/hover = SubResource("StyleBoxFlat_adx6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5rio")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rbxdd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ypqf")
+text = "Cancel"
+
+[node name="Confirm" type="Button" parent="ChooseMonthYear/VBoxContainer/DateShortCutsBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_d04lu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2bem4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d04lu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_erv5s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g1uaw")
+text = "Confirm"
+
+[node name="TimerNode" type="Node" parent="."]
+
+[node name="RefreshTimeTimer" type="Timer" parent="TimerNode"]
+wait_time = 0.25
+autostart = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth" to="." method="_on_left_month_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/CurrentDateLabel/SelectMonth" to="." method="_on_select_month_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth" to="." method="_on_right_month_pressed"]
+[connection signal="gui_input" from="ChooseMonthYear/VBoxContainer/YearBox/PanelContainer/YearScroll" to="." method="_on_year_scroll_gui_input"]
+[connection signal="pressed" from="ChooseMonthYear/VBoxContainer/TestButton" to="." method="_on_test_button_pressed"]
+[connection signal="timeout" from="TimerNode/RefreshTimeTimer" to="." method="_on_refresh_time_timer_timeout"]

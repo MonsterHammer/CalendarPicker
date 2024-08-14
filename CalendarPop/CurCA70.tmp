@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://je13wqh75dgr"]
+
+[ext_resource type="Script" path="res://CalendarPop/CurrentButton.gd" id="1_61vtt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpgin"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w6sw"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5acgf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6c25"]
+bg_color = Color(0.345098, 0.482353, 0.980392, 1)
+border_color = Color(0.370364, 0.370365, 0.370364, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CurrentButton" type="Button"]
+custom_minimum_size = Vector2(25, 25)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.486275, 0.517647, 0.568627, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.486275, 0.517647, 0.568627, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.486275, 0.517647, 0.568627, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dpgin")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5w6sw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5acgf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5acgf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h6c25")
+toggle_mode = true
+text = "1"
+script = ExtResource("1_61vtt")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
