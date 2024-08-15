@@ -15,8 +15,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5acgf"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6c25"]
 bg_color = Color(0.345098, 0.482353, 0.980392, 1)
 border_color = Color(0.370364, 0.370365, 0.370364, 1)
@@ -24,6 +22,8 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5acgf"]
 
 [node name="CurrentButton" type="Button"]
 custom_minimum_size = Vector2(25, 25)
@@ -38,7 +38,7 @@ theme_override_colors/font_disabled_color = Color(0.486275, 0.517647, 0.568627, 
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dpgin")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5w6sw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_5acgf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6c25")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_5acgf")
 theme_override_styles/focus = SubResource("StyleBoxFlat_h6c25")
 toggle_mode = true

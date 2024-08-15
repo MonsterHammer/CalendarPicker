@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dubkw6fn2rh5c"]
+[gd_scene load_steps=31 format=3 uid="uid://dubkw6fn2rh5c"]
 
 [ext_resource type="Script" path="res://CalendarPop/test.gd" id="1_asykr"]
 [ext_resource type="Texture2D" uid="uid://c7f23gmik4tr7" path="res://CalendarPop/Back.png" id="2_jqf1h"]
@@ -12,24 +12,6 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y842"]
-content_margin_left = 10.0
-content_margin_right = 10.0
-bg_color = Color(0.972549, 0.972549, 0.972549, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.356863, 0.490196, 0.984314, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ejse2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rvw6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vle2"]
 content_margin_left = 12.0
@@ -202,65 +184,60 @@ corner_radius_bottom_left = 2
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_46nc5"]
 
-[node name="DatePickerPanel" type="PanelContainer"]
+[node name="Test" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -536.0
-offset_bottom = -556.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_asykr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.964706, 0.937255, 0.796078, 1)
 
-[node name="DatePickerButton" type="Button" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 68.0
+offset_right = 390.0
+offset_bottom = 103.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.309804, 0.356863, 0.427451, 1)
-theme_override_colors/font_pressed_color = Color(0.309804, 0.356863, 0.427451, 1)
-theme_override_colors/font_hover_color = Color(0.309804, 0.356863, 0.427451, 1)
-theme_override_colors/font_focus_color = Color(0.309804, 0.356863, 0.427451, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.309804, 0.356863, 0.427451, 1)
-theme_override_colors/font_disabled_color = Color(0.309804, 0.356863, 0.427451, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_nf07u")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3y842")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nf07u")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ejse2")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_2rvw6")
 text = "Tuesday, August 13, 2024"
 alignment = 0
 
-[node name="PopLayer" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="DatePickerPanel" type="PanelContainer" parent="PopLayer"]
+[node name="DatePickerPanel" type="PanelContainer" parent="."]
 unique_name_in_owner = true
-visible = false
-offset_top = 54.0
-offset_right = 264.0
-offset_bottom = 445.0
+layout_mode = 0
+offset_left = 126.0
+offset_top = 113.0
+offset_right = 390.0
+offset_bottom = 504.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3vle2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PopLayer/DatePickerPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DatePickerPanel"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="CurrentDateTime" type="VBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer"]
+[node name="CurrentDateTime" type="VBoxContainer" parent="DatePickerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="VBoxContainer" type="HBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer/CurrentDateTime"]
+[node name="VBoxContainer" type="HBoxContainer" parent="DatePickerPanel/VBoxContainer/CurrentDateTime"]
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 
-[node name="SelecteDateLabel" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/CurrentDateTime/VBoxContainer"]
+[node name="SelecteDateLabel" type="Label" parent="DatePickerPanel/VBoxContainer/CurrentDateTime/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -270,11 +247,11 @@ text = "Tuesday, August 13, 2024"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer2" type="HBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer/CurrentDateTime"]
+[node name="VBoxContainer2" type="HBoxContainer" parent="DatePickerPanel/VBoxContainer/CurrentDateTime"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="CurrentTimeLabel" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/CurrentDateTime/VBoxContainer2"]
+[node name="CurrentTimeLabel" type="Label" parent="DatePickerPanel/VBoxContainer/CurrentDateTime/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -284,12 +261,12 @@ text = "03:04:06 AM"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DateShortCutsBox" type="HBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer"]
+[node name="DateShortCutsBox" type="HBoxContainer" parent="DatePickerPanel/VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PopLayer/DatePickerPanel/VBoxContainer/DateShortCutsBox"]
+[node name="Button" type="Button" parent="DatePickerPanel/VBoxContainer/DateShortCutsBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47451, 0.501961, 0.552941, 1)
 theme_override_colors/font_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
@@ -307,7 +284,7 @@ button_pressed = true
 button_group = SubResource("ButtonGroup_q70wn")
 text = "Today"
 
-[node name="Button2" type="Button" parent="PopLayer/DatePickerPanel/VBoxContainer/DateShortCutsBox"]
+[node name="Button2" type="Button" parent="DatePickerPanel/VBoxContainer/DateShortCutsBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47451, 0.501961, 0.552941, 1)
 theme_override_colors/font_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
@@ -324,7 +301,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_q70wn")
 text = "Custom"
 
-[node name="Button3" type="Button" parent="PopLayer/DatePickerPanel/VBoxContainer/DateShortCutsBox"]
+[node name="Button3" type="Button" parent="DatePickerPanel/VBoxContainer/DateShortCutsBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47451, 0.501961, 0.552941, 1)
 theme_override_colors/font_pressed_color = Color(0.454902, 0.572549, 0.980392, 1)
@@ -341,22 +318,22 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_q70wn")
 text = "Tomorrow"
 
-[node name="MonthYear" type="HBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer"]
+[node name="MonthYear" type="HBoxContainer" parent="DatePickerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear"]
+[node name="PanelContainer" type="PanelContainer" parent="DatePickerPanel/VBoxContainer/MonthYear"]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_74k2f")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="LeftMonth" type="Button" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
+[node name="LeftMonth" type="Button" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(25, 17)
 layout_mode = 2
 size_flags_vertical = 4
@@ -368,7 +345,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_sd6xg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sd6xg")
 flat = true
 
-[node name="Panel" type="Panel" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth"]
+[node name="Panel" type="Panel" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth"]
 custom_minimum_size = Vector2(17, 17)
 layout_mode = 1
 anchors_preset = 8
@@ -385,7 +362,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i8t15")
 
-[node name="Icon" type="TextureRect" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth/Panel"]
+[node name="Icon" type="TextureRect" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth/Panel"]
 modulate = Color(0.458824, 0.490196, 0.541176, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -396,7 +373,7 @@ grow_vertical = 2
 texture = ExtResource("2_jqf1h")
 expand_mode = 1
 
-[node name="CurrentDateLabel" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
+[node name="CurrentDateLabel" type="Label" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -406,7 +383,7 @@ text = "August, 2021"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SelectMonth" type="Button" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/CurrentDateLabel"]
+[node name="SelectMonth" type="Button" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/CurrentDateLabel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -422,7 +399,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqetp")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cqetp")
 flat = true
 
-[node name="RightMonth" type="Button" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
+[node name="RightMonth" type="Button" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(25, 17)
 layout_mode = 2
 size_flags_vertical = 4
@@ -434,7 +411,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_sd6xg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sd6xg")
 flat = true
 
-[node name="Panel" type="Panel" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth"]
+[node name="Panel" type="Panel" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth"]
 custom_minimum_size = Vector2(17, 17)
 layout_mode = 1
 anchors_preset = 8
@@ -451,7 +428,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i8t15")
 
-[node name="Icon" type="TextureRect" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth/Panel"]
+[node name="Icon" type="TextureRect" parent="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth/Panel"]
 modulate = Color(0.458824, 0.490196, 0.541176, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -462,16 +439,16 @@ grow_vertical = 2
 texture = ExtResource("3_vgpa6")
 expand_mode = 1
 
-[node name="DateTable" type="VBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer"]
+[node name="DateTable" type="VBoxContainer" parent="DatePickerPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Days" type="HBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable"]
+[node name="Days" type="HBoxContainer" parent="DatePickerPanel/VBoxContainer/DateTable"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable/Days"]
+[node name="Label" type="Label" parent="DatePickerPanel/VBoxContainer/DateTable/Days"]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -482,7 +459,7 @@ text = "Mo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable/Days"]
+[node name="Label2" type="Label" parent="DatePickerPanel/VBoxContainer/DateTable/Days"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -492,7 +469,7 @@ text = "Tu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable/Days"]
+[node name="Label3" type="Label" parent="DatePickerPanel/VBoxContainer/DateTable/Days"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -502,7 +479,7 @@ text = "We"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable/Days"]
+[node name="Label4" type="Label" parent="DatePickerPanel/VBoxContainer/DateTable/Days"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -512,7 +489,7 @@ text = "Th"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable/Days"]
+[node name="Label5" type="Label" parent="DatePickerPanel/VBoxContainer/DateTable/Days"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -522,7 +499,7 @@ text = "Fr"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable/Days"]
+[node name="Label6" type="Label" parent="DatePickerPanel/VBoxContainer/DateTable/Days"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -532,7 +509,7 @@ text = "Sa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label7" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable/Days"]
+[node name="Label7" type="Label" parent="DatePickerPanel/VBoxContainer/DateTable/Days"]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -543,7 +520,7 @@ text = "Su"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DateGrid" type="GridContainer" parent="PopLayer/DatePickerPanel/VBoxContainer/DateTable"]
+[node name="DateGrid" type="GridContainer" parent="DatePickerPanel/VBoxContainer/DateTable"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -551,11 +528,11 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 7
 
-[node name="DateShortCutsBox2" type="HBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer"]
+[node name="DateShortCutsBox2" type="HBoxContainer" parent="DatePickerPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 
-[node name="Cancel" type="Button" parent="PopLayer/DatePickerPanel/VBoxContainer/DateShortCutsBox2"]
+[node name="Cancel" type="Button" parent="DatePickerPanel/VBoxContainer/DateShortCutsBox2"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
@@ -573,7 +550,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_rbxdd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ypqf")
 text = "Cancel"
 
-[node name="Confirm" type="Button" parent="PopLayer/DatePickerPanel/VBoxContainer/DateShortCutsBox2"]
+[node name="Confirm" type="Button" parent="DatePickerPanel/VBoxContainer/DateShortCutsBox2"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
@@ -590,28 +567,30 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_erv5s")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g1uaw")
 text = "Confirm"
 
-[node name="ChooseMonthYearPanel" type="PanelContainer" parent="PopLayer"]
+[node name="ChooseMonthYearPanel" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 visible = false
-offset_top = 54.0
-offset_right = 264.0
-offset_bottom = 445.0
+layout_mode = 0
+offset_left = 126.0
+offset_top = 113.0
+offset_right = 390.0
+offset_bottom = 504.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3vle2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PopLayer/ChooseMonthYearPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ChooseMonthYearPanel"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="CurrentDateTime" type="VBoxContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer"]
+[node name="CurrentDateTime" type="VBoxContainer" parent="ChooseMonthYearPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="VBoxContainer" type="HBoxContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/CurrentDateTime"]
+[node name="VBoxContainer" type="HBoxContainer" parent="ChooseMonthYearPanel/VBoxContainer/CurrentDateTime"]
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 
-[node name="SelecteDateLabel" type="Label" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/CurrentDateTime/VBoxContainer"]
+[node name="SelecteDateLabel" type="Label" parent="ChooseMonthYearPanel/VBoxContainer/CurrentDateTime/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.25098, 0.301961, 0.380392, 1)
@@ -620,13 +599,13 @@ text = "Choose Year and Month"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" type="Panel" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer"]
+[node name="PanelContainer" type="Panel" parent="ChooseMonthYearPanel/VBoxContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_adaad")
 
-[node name="YearBox" type="HBoxContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/PanelContainer"]
+[node name="YearBox" type="HBoxContainer" parent="ChooseMonthYearPanel/VBoxContainer/PanelContainer"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 1
 anchors_preset = 8
@@ -641,13 +620,13 @@ offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox"]
+[node name="PanelContainer" type="PanelContainer" parent="ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox"]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_4hwnd")
 
-[node name="YearScroll" type="ScrollContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer"]
+[node name="YearScroll" type="ScrollContainer" parent="ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
@@ -655,17 +634,17 @@ scroll_vertical_custom_step = 1.0
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
-[node name="YearCon" type="VBoxContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer/YearScroll"]
+[node name="YearCon" type="VBoxContainer" parent="ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer/YearScroll"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="MonthTable" type="VBoxContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer"]
+[node name="MonthTable" type="VBoxContainer" parent="ChooseMonthYearPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MonthGrid" type="GridContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable"]
+[node name="MonthGrid" type="GridContainer" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -673,7 +652,7 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 3
 
-[node name="CurrentButton" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -694,7 +673,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Jan"
 
-[node name="CurrentButton2" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton2" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -715,7 +694,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Feb"
 
-[node name="CurrentButton3" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton3" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -736,7 +715,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Mar"
 
-[node name="CurrentButton4" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton4" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -757,7 +736,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Apr"
 
-[node name="CurrentButton5" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton5" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -778,7 +757,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "May"
 
-[node name="CurrentButton6" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton6" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -799,7 +778,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Jun"
 
-[node name="CurrentButton7" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton7" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -820,7 +799,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Jul"
 
-[node name="CurrentButton8" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton8" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -841,7 +820,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Aug"
 
-[node name="CurrentButton9" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton9" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -862,7 +841,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Sep"
 
-[node name="CurrentButton10" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton10" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -883,7 +862,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Oct"
 
-[node name="CurrentButton11" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton11" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -904,7 +883,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Nov"
 
-[node name="CurrentButton12" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
+[node name="CurrentButton12" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/MonthTable/MonthGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -925,11 +904,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_46nc5")
 text = "Dec"
 
-[node name="DateShortCutsBox2" type="HBoxContainer" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer"]
+[node name="DateShortCutsBox2" type="HBoxContainer" parent="ChooseMonthYearPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 
-[node name="MonthYearCancel" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/DateShortCutsBox2"]
+[node name="MonthYearCancel" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/DateShortCutsBox2"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
@@ -947,7 +926,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_rbxdd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ypqf")
 text = "Cancel"
 
-[node name="MonthYearConfirm" type="Button" parent="PopLayer/ChooseMonthYearPanel/VBoxContainer/DateShortCutsBox2"]
+[node name="MonthYearConfirm" type="Button" parent="ChooseMonthYearPanel/VBoxContainer/DateShortCutsBox2"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
@@ -970,15 +949,15 @@ text = "Confirm"
 wait_time = 0.25
 autostart = true
 
-[connection signal="pressed" from="DatePickerButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth" to="." method="_on_left_month_pressed"]
-[connection signal="pressed" from="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/CurrentDateLabel/SelectMonth" to="." method="_on_select_month_pressed"]
-[connection signal="pressed" from="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth" to="." method="_on_right_month_pressed"]
-[connection signal="pressed" from="PopLayer/DatePickerPanel/VBoxContainer/DateShortCutsBox2/Cancel" to="." method="_on_cancel_pressed"]
-[connection signal="pressed" from="PopLayer/DatePickerPanel/VBoxContainer/DateShortCutsBox2/Confirm" to="." method="_on_confirm_pressed"]
-[connection signal="gui_input" from="PopLayer/ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer/YearScroll" to="." method="_on_year_scroll_gui_input"]
-[connection signal="scroll_ended" from="PopLayer/ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer/YearScroll" to="." method="_on_year_scroll_scroll_ended"]
-[connection signal="scroll_started" from="PopLayer/ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer/YearScroll" to="." method="_on_year_scroll_scroll_started"]
-[connection signal="pressed" from="PopLayer/ChooseMonthYearPanel/VBoxContainer/DateShortCutsBox2/MonthYearCancel" to="." method="_on_month_year_cancel_pressed"]
-[connection signal="pressed" from="PopLayer/ChooseMonthYearPanel/VBoxContainer/DateShortCutsBox2/MonthYearConfirm" to="." method="_on_month_year_confirm_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/LeftMonth" to="." method="_on_left_month_pressed"]
+[connection signal="pressed" from="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/CurrentDateLabel/SelectMonth" to="." method="_on_select_month_pressed"]
+[connection signal="pressed" from="DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer/RightMonth" to="." method="_on_right_month_pressed"]
+[connection signal="pressed" from="DatePickerPanel/VBoxContainer/DateShortCutsBox2/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="DatePickerPanel/VBoxContainer/DateShortCutsBox2/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="gui_input" from="ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer/YearScroll" to="." method="_on_year_scroll_gui_input"]
+[connection signal="scroll_ended" from="ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer/YearScroll" to="." method="_on_year_scroll_scroll_ended"]
+[connection signal="scroll_started" from="ChooseMonthYearPanel/VBoxContainer/PanelContainer/YearBox/PanelContainer/YearScroll" to="." method="_on_year_scroll_scroll_started"]
+[connection signal="pressed" from="ChooseMonthYearPanel/VBoxContainer/DateShortCutsBox2/MonthYearCancel" to="." method="_on_month_year_cancel_pressed"]
+[connection signal="pressed" from="ChooseMonthYearPanel/VBoxContainer/DateShortCutsBox2/MonthYearConfirm" to="." method="_on_month_year_confirm_pressed"]
 [connection signal="timeout" from="TimerNode/RefreshTimeTimer" to="." method="_on_refresh_time_timer_timeout"]

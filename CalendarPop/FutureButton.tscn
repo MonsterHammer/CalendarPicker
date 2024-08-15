@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://byptsrvgisrgt"]
+[gd_scene load_steps=6 format=3 uid="uid://byptsrvgisrgt"]
 
 [ext_resource type="Script" path="res://CalendarPop/FutureButton.gd" id="1_0sivu"]
 
@@ -23,6 +23,8 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cyq55"]
+
 [node name="CurrentButton" type="Button"]
 custom_minimum_size = Vector2(25, 25)
 size_flags_horizontal = 3
@@ -36,9 +38,10 @@ theme_override_colors/font_disabled_color = Color(0.764706, 0.780392, 0.807843, 
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dpgin")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1a5h1")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_dpgin")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iukvl")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_dpgin")
-theme_override_styles/focus = SubResource("StyleBoxFlat_iukvl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cyq55")
+toggle_mode = true
 text = "1"
 clip_text = true
 script = ExtResource("1_0sivu")

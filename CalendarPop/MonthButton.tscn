@@ -15,7 +15,7 @@ border_color = Color(0.370364, 0.370365, 0.370364, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5acgf"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3lgf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gbj3k"]
 
 [node name="CurrentButton" type="Button"]
 custom_minimum_size = Vector2(50, 50)
@@ -32,6 +32,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_dpgin")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xrrlj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fa3nj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_5acgf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_r3lgf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gbj3k")
 toggle_mode = true
 text = "1"

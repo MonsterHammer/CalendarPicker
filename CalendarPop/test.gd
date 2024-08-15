@@ -17,6 +17,7 @@ var scroll_size = 0
 var from = 1950
 var to = 2050
 var anim_speed = float(0.2)
+var global_date_data = {}
 
 @onready var date_grid = %DateGrid
 @onready var current_date_label = %CurrentDateLabel
@@ -25,18 +26,26 @@ var anim_speed = float(0.2)
 @onready var year_scroll = %YearScroll
 @onready var year_con = %YearCon
 @onready var choose_month_year = %ChooseMonthYearPanel
+@onready var month_grid = %MonthGrid
+@onready var date_picker_panel = %DatePickerPanel
+@onready var date_picker_button = %DatePickerButton
 
 var year = 2024
 var month = 1
+var day = 1
 
 func _ready():
 	generate_years(from, to)
 	
+	
 	var current_date_string = Time.get_datetime_dict_from_system(false)
 	year = current_date_string.year
 	month = current_date_string.month
+	day = current_date_string.day
 	
+	select_month(month)
 	load_the_date(year, month)
+	#select_day(day)
 
 # Function to determine if a year is a leap year
 func is_leap_year(year: int) -> bool:
@@ -114,6 +123,24 @@ func update_month_year_label(year, month):
 	var final_text = str(month_abbreviations[month]) + ", " + str(year)
 	current_date_label.text = final_text
 
+func select_day(param_date):
+	for i in date_grid.get_child_count():
+		var cur_date =  date_grid.get_child(i)
+		var cur_date_value = cur_date.text
+		var date_to_string = str(param_date)
+		if date_to_string == cur_date_value and cur_date.get_button_type() == button_date_type.current_type:
+			cur_date.emit_signal("date_pressed", cur_date, cur_date.get_button_type(), cur_date.get_global_date_data())
+	
+	#for i in date_grid.get_child_count():
+		#var cur_button = date_grid.get_child(i)
+		#cur_button.button_pressed = false
+	#button_node.button_pressed = true
+	#
+	#global_date_data = button_data
+	#var new_selected_date = str(get_weekday_name(button_data.weekday)) + ", " + str(get_month_name(button_data.month)) + " " + str(button_data.day) + ", " + str(button_data.year)
+	#selected_date_label.text = new_selected_date
+
+
 func load_the_date(param_year, param_month):
 	update_month_year_label(param_year, param_month)
 	
@@ -131,6 +158,7 @@ func load_the_date(param_year, param_month):
 	var future_data = calendar_dict.future_date
 	generate_future_dates(future_data, param_month, param_year)
 	
+	select_day(day)
 
 func generate_past_dates(date_data, param_month, param_year):
 	var new_month = param_month - 1
@@ -178,7 +206,12 @@ func generate_future_dates(date_data, param_month, param_year):
 		target_button.set_data(start_weekday)
 
 func _on_button_pressed():
-	load_the_date(year, month)
+	#load_the_date(year, month)
+	
+	if date_picker_panel.visible:
+		date_picker_panel.visible = false
+	else:
+		date_picker_panel.visible = true
 
 func _on_left_month_pressed():
 	month = month - 1
@@ -204,6 +237,7 @@ func update_date_pressed(button_node, button_type, button_data):
 		cur_button.button_pressed = false
 	button_node.button_pressed = true
 	
+	global_date_data = button_data
 	var new_selected_date = str(get_weekday_name(button_data.weekday)) + ", " + str(get_month_name(button_data.month)) + " " + str(button_data.day) + ", " + str(button_data.year)
 	selected_date_label.text = new_selected_date
 
@@ -257,13 +291,17 @@ func _on_refresh_time_timer_timeout():
 
 func _on_select_month_pressed():
 	choose_month_year.visible = true
+	
+	var new_value = scroll_items_times * 27
+	var tween = get_tree().create_tween()
+	tween.tween_property(year_scroll, "scroll_vertical", new_value, anim_speed)
+	fade_animation(scroll_items_times)
 
 func _on_test_button_pressed():
 	pass
 
 func _on_year_scroll_gui_input(event):
 	if event is InputEventMouseButton:
-		
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			var tween = get_tree().create_tween()
 			scroll_items_times -= 1
@@ -275,9 +313,10 @@ func _on_year_scroll_gui_input(event):
 		
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			var tween = get_tree().create_tween()
-			scroll_items_times = scroll_items_times + 1
-			if scroll_items_times > scroll_size:
-				scroll_items_times = scroll_size
+			scroll_items_times += 1
+			if scroll_items_times >= scroll_size:
+				scroll_items_times = scroll_size - 1
+				
 			var new_value = scroll_items_times * 27
 			tween.tween_property(year_scroll, "scroll_vertical", new_value, anim_speed)
 			fade_animation(scroll_items_times)
@@ -301,7 +340,9 @@ func generate_years(from, to):
 			var tween = get_tree().create_tween()
 			tween.tween_property(year_scroll, "scroll_vertical", new_value, anim_speed)
 			fade_animation(scroll_items_times)
-	
+
+func select_month(our_month):
+	month_grid.get_child(our_month).button_pressed = true
 
 func manual_select_button(button_node):
 	var get_node_index = -1
@@ -334,8 +375,7 @@ func fade_animation(cur_index):
 			if cur_con.modulate.a != 0:
 				var tween = get_tree().create_tween()
 				tween.tween_property(cur_con, "modulate:a", 0, anim_speed)
-		
-		
+	
 
 func _on_year_scroll_scroll_ended():
 	pass # Replace with function body.
@@ -345,10 +385,29 @@ func _on_year_scroll_scroll_started():
 
 
 func _on_month_year_confirm_pressed():
-	pass # Replace with function body.
+	year = int(year_con.get_child(scroll_items_times).text)
+	var temp_selected = -1
+	
+	for i in month_grid.get_child_count():
+		var cur_month = month_grid.get_child(i)
+		if cur_month.button_pressed == true:
+			temp_selected = i
+			break
+	
+	month = temp_selected + 1
+	load_the_date(year, month)
+	choose_month_year.visible = false
 
 func _on_month_year_cancel_pressed():
 	choose_month_year.visible = false
+
+func _on_cancel_pressed():
+	date_picker_panel.visible = false
+
+func _on_confirm_pressed():
+	date_picker_button.text = selected_date_label.text
+	date_picker_panel.visible = false
+
 
 
 
