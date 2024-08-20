@@ -1,13 +1,20 @@
-[gd_scene load_steps=34 format=3 uid="uid://dubkw6fn2rh5c"]
+[gd_scene load_steps=35 format=3 uid="uid://dubkw6fn2rh5c"]
 
-[ext_resource type="Script" path="res://CalendarPop/test.gd" id="1_asykr"]
-[ext_resource type="Texture2D" uid="uid://c7f23gmik4tr7" path="res://CalendarPop/Back.png" id="2_jqf1h"]
-[ext_resource type="Texture2D" uid="uid://ktvjpyun302" path="res://CalendarPop/Forward.png" id="3_vgpa6"]
+[ext_resource type="Script" path="res://CalendarPop/test.gd" id="1_67bx5"]
+[ext_resource type="Texture2D" uid="uid://c7f23gmik4tr7" path="res://CalendarPop/Back.png" id="2_bdqrv"]
+[ext_resource type="Texture2D" uid="uid://ktvjpyun302" path="res://CalendarPop/Forward.png" id="3_8enjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbgii"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf07u"]
 content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color(0.972549, 0.972549, 0.972549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.720467, 0.720468, 0.720467, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -17,10 +24,10 @@ corner_radius_bottom_left = 4
 content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color(0.972549, 0.972549, 0.972549, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0.356863, 0.490196, 0.984314, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -210,7 +217,8 @@ offset_right = -536.0
 offset_bottom = -556.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_asykr")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mbgii")
+script = ExtResource("1_67bx5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -393,7 +401,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jqf1h")
+texture = ExtResource("2_bdqrv")
 expand_mode = 1
 
 [node name="CurrentDateLabel" type="Label" parent="PopLayer/DatePickerPanel/VBoxContainer/MonthYear/PanelContainer/HBoxContainer"]
@@ -459,7 +467,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_vgpa6")
+texture = ExtResource("3_8enjx")
 expand_mode = 1
 
 [node name="DateTable" type="VBoxContainer" parent="PopLayer/DatePickerPanel/VBoxContainer"]

@@ -18,6 +18,7 @@ var from = 1950
 var to = 2050
 var anim_speed = float(0.2)
 var global_date_data = {}
+var global_time_data = {}
 
 @onready var date_grid = %DateGrid
 @onready var current_date_label = %CurrentDateLabel
@@ -34,17 +35,31 @@ var year = 2024
 var month = 1
 var day = 1
 
+func get_date_data():
+	var merge_date_and_time = {
+		'year' : global_date_data.year,
+		'month' : global_date_data.month,
+		'day' : global_date_data.day,
+		'hour' : global_time_data.hour,
+		'minute' : global_time_data.minute,
+		'second' : global_time_data.second,
+		'period' : global_time_data.period
+	}
+	
+	return merge_date_and_time
+
 func _ready():
 	generate_years(from, to)
 	
-	
 	var current_date_string = Time.get_datetime_dict_from_system(false)
+	
 	year = current_date_string.year
 	month = current_date_string.month
 	day = current_date_string.day
 	
 	select_month(month)
 	load_the_date(year, month)
+	
 	#select_day(day)
 
 # Function to determine if a year is a leap year
@@ -130,6 +145,7 @@ func select_day(param_date):
 		var date_to_string = str(param_date)
 		if date_to_string == cur_date_value and cur_date.get_button_type() == button_date_type.current_type:
 			cur_date.emit_signal("date_pressed", cur_date, cur_date.get_button_type(), cur_date.get_global_date_data())
+			
 	
 	#for i in date_grid.get_child_count():
 		#var cur_button = date_grid.get_child(i)
@@ -140,10 +156,8 @@ func select_day(param_date):
 	#var new_selected_date = str(get_weekday_name(button_data.weekday)) + ", " + str(get_month_name(button_data.month)) + " " + str(button_data.day) + ", " + str(button_data.year)
 	#selected_date_label.text = new_selected_date
 
-
 func load_the_date(param_year, param_month):
 	update_month_year_label(param_year, param_month)
-	
 	var calendar_dict : Dictionary = create_date_picker(param_year, param_month)
 	
 	for i in date_grid.get_child_count():
@@ -159,6 +173,7 @@ func load_the_date(param_year, param_month):
 	generate_future_dates(future_data, param_month, param_year)
 	
 	select_day(day)
+	date_picker_button.text = selected_date_label.text
 
 func generate_past_dates(date_data, param_month, param_year):
 	var new_month = param_month - 1
@@ -207,11 +222,16 @@ func generate_future_dates(date_data, param_month, param_year):
 
 func _on_button_pressed():
 	#load_the_date(year, month)
+	#CONFIGURE THE ANIMATION OF THE BUTTON
 	
 	if date_picker_panel.visible:
 		date_picker_panel.visible = false
 	else:
 		date_picker_panel.visible = true
+		
+		var new_pos = Vector2(self.global_position.x, self.global_position.y + date_picker_button.size.y + 10)
+		date_picker_panel.position = new_pos
+		choose_month_year.position = new_pos
 
 func _on_left_month_pressed():
 	month = month - 1
@@ -231,6 +251,7 @@ func _on_right_month_pressed():
 	
 	load_the_date(year, month)
 
+#THIS IS WHERE WE SET DATA.
 func update_date_pressed(button_node, button_type, button_data):
 	for i in date_grid.get_child_count():
 		var cur_button = date_grid.get_child(i)
@@ -285,8 +306,17 @@ func _on_refresh_time_timer_timeout():
 			hour -= 12
 	elif hour == 0:
 		hour = 12
-	
+
 	var time_string = "%02d:%02d:%02d %s" % [hour, minute, second, period]
+	
+	var current_time_replace_global = {
+		'hour' : hour,
+		'minute' : minute,
+		'second' : second,
+		'period' : period,
+	}
+	global_time_data = current_time_replace_global
+	
 	current_time_label.text = time_string
 
 func _on_select_month_pressed():
@@ -360,7 +390,6 @@ func manual_select_button(button_node):
 		tween.tween_property(year_scroll, "scroll_vertical", new_value, anim_speed)
 		fade_animation(scroll_items_times)
 
-
 func fade_animation(cur_index):
 	var scroll_prev = cur_index - 1
 	var temp_next = cur_index + 1
@@ -376,13 +405,6 @@ func fade_animation(cur_index):
 				var tween = get_tree().create_tween()
 				tween.tween_property(cur_con, "modulate:a", 0, anim_speed)
 	
-
-func _on_year_scroll_scroll_ended():
-	pass # Replace with function body.
-
-func _on_year_scroll_scroll_started():
-	pass # Replace with function body.
-
 
 func _on_month_year_confirm_pressed():
 	year = int(year_con.get_child(scroll_items_times).text)
