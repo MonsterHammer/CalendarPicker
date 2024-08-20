@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7f23gmik4tr7"
-path="res://.godot/imported/Back.png-560f24ded2154fdd47cd422e2a007d80.ctex"
+uid="uid://bvsk81dbr6pkt"
+path="res://.godot/imported/Chevron Right.png-9fdc0824d54c9183b39b17ec02466a11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CalendarPop/Back.png"
-dest_files=["res://.godot/imported/Back.png-560f24ded2154fdd47cd422e2a007d80.ctex"]
+source_file="res://addons/CalendarPickerFiles/CalendarPop/Chevron Right.png"
+dest_files=["res://.godot/imported/Chevron Right.png-9fdc0824d54c9183b39b17ec02466a11.ctex"]
 
 [params]
 

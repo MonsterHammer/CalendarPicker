@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://byptsrvgisrgt"]
 
-[ext_resource type="Script" path="res://CalendarPop/FutureButton.gd" id="1_0sivu"]
+[ext_resource type="Script" path="res://addons/CalendarPickerFiles/CalendarPop/FutureButton.gd" id="1_bn1if"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpgin"]
 
@@ -44,6 +44,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cyq55")
 toggle_mode = true
 text = "1"
 clip_text = true
-script = ExtResource("1_0sivu")
+script = ExtResource("1_bn1if")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

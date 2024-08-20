@@ -1,10 +1,10 @@
 extends Control
 
 
-var current_button = preload("res://CalendarPop/CurrentButton.tscn")
-var past_button = preload("res://CalendarPop/PastButton.tscn")
-var future_button = preload("res://CalendarPop/FutureButton.tscn")
-var year_button = preload("res://CalendarPop/year_button.tscn")
+var current_button = preload("res://addons/CalendarPickerFiles/CalendarPop/CurrentButton.tscn")
+var past_button = preload("res://addons/CalendarPickerFiles/CalendarPop/PastButton.tscn")
+var future_button = preload("res://addons/CalendarPickerFiles/CalendarPop/FutureButton.tscn")
+var year_button = preload("res://addons/CalendarPickerFiles/CalendarPop/year_button.tscn")
 
 enum button_date_type {
 	past_type,
@@ -18,6 +18,8 @@ var from = 1950
 var to = 2050
 var anim_speed = float(0.2)
 var global_date_data = {}
+var final_date_data = {}
+
 var global_time_data = {}
 
 @onready var date_grid = %DateGrid
@@ -37,9 +39,9 @@ var day = 1
 
 func get_date_data():
 	var merge_date_and_time = {
-		'year' : global_date_data.year,
-		'month' : global_date_data.month,
-		'day' : global_date_data.day,
+		'year' : final_date_data.year,
+		'month' : final_date_data.month,
+		'day' : final_date_data.day,
 		'hour' : global_time_data.hour,
 		'minute' : global_time_data.minute,
 		'second' : global_time_data.second,
@@ -59,7 +61,8 @@ func _ready():
 	
 	select_month(month)
 	load_the_date(year, month)
-	
+	date_picker_button.text = selected_date_label.text
+	final_date_data = global_date_data 
 	#select_day(day)
 
 # Function to determine if a year is a leap year
@@ -173,7 +176,7 @@ func load_the_date(param_year, param_month):
 	generate_future_dates(future_data, param_month, param_year)
 	
 	select_day(day)
-	date_picker_button.text = selected_date_label.text
+	
 
 func generate_past_dates(date_data, param_month, param_year):
 	var new_month = param_month - 1
@@ -427,6 +430,7 @@ func _on_cancel_pressed():
 	date_picker_panel.visible = false
 
 func _on_confirm_pressed():
+	final_date_data = global_date_data
 	date_picker_button.text = selected_date_label.text
 	date_picker_panel.visible = false
 

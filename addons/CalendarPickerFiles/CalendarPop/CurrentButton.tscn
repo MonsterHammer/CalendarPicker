@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://je13wqh75dgr"]
 
-[ext_resource type="Script" path="res://CalendarPop/CurrentButton.gd" id="1_61vtt"]
+[ext_resource type="Script" path="res://addons/CalendarPickerFiles/CalendarPop/CurrentButton.gd" id="1_7p021"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpgin"]
 
@@ -43,6 +43,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_5acgf")
 theme_override_styles/focus = SubResource("StyleBoxFlat_h6c25")
 toggle_mode = true
 text = "1"
-script = ExtResource("1_61vtt")
+script = ExtResource("1_7p021")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

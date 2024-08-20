@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c88jv4qt8d04g"]
 
-[ext_resource type="Script" path="res://TestingScenes/TestScene.gd" id="1_6qltd"]
-[ext_resource type="PackedScene" uid="uid://dubkw6fn2rh5c" path="res://CalendarPop/DatePickerPanel.tscn" id="1_tayc3"]
+[ext_resource type="Script" path="res://addons/CalendarPickerFiles/TestingScenes/TestScene.gd" id="1_6qltd"]
+[ext_resource type="PackedScene" uid="uid://dubkw6fn2rh5c" path="res://addons/CalendarPickerFiles/CalendarPop/DatePickerPanel.tscn" id="1_tayc3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dahq"]
 bg_color = Color(0.977937, 0.977937, 0.977937, 1)
