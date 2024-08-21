@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ktvjpyun302"
-path="res://.godot/imported/Forward.png-80078429301f8fde331fc09df5a81a51.ctex"
+uid="uid://b4jt73l4uixny"
+path="res://.godot/imported/Leave.png-873f1f69d07b9d1b9a49e1bd33ee2245.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/CalendarPickerFiles/CalendarPop/Forward.png"
-dest_files=["res://.godot/imported/Forward.png-80078429301f8fde331fc09df5a81a51.ctex"]
+source_file="res://addons/DatePickerFiles/Leave.png"
+dest_files=["res://.godot/imported/Leave.png-873f1f69d07b9d1b9a49e1bd33ee2245.ctex"]
 
 [params]
 

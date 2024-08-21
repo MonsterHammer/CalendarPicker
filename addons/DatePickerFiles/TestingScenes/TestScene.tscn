@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c88jv4qt8d04g"]
+
+[ext_resource type="Script" path="res://addons/DatePickerFiles/TestingScenes/TestScene.gd" id="1_6qltd"]
+[ext_resource type="PackedScene" uid="uid://dubkw6fn2rh5c" path="res://addons/DatePickerFiles/CalendarPop/DatePickerPanel.tscn" id="1_tayc3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dahq"]
+bg_color = Color(0.977937, 0.977937, 0.977937, 1)
+
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6qltd")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0dahq")
+
+[node name="DatePickerPanel" parent="Panel" instance=ExtResource("1_tayc3")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 70.0
+offset_top = 44.0
+offset_right = -329.0
+offset_bottom = -512.0
+
+[node name="TestButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 105.0
+offset_right = 192.0
+offset_bottom = 141.0
+text = "PRINT DATE CURRENT DATA ->"
+
+[connection signal="pressed" from="Panel/TestButton" to="." method="_on_test_button_pressed"]

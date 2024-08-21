@@ -1,8 +1,8 @@
 [gd_scene load_steps=35 format=3 uid="uid://dubkw6fn2rh5c"]
 
-[ext_resource type="Script" path="res://addons/CalendarPickerFiles/CalendarPop/test.gd" id="1_67bx5"]
-[ext_resource type="Texture2D" uid="uid://c7f23gmik4tr7" path="res://addons/CalendarPickerFiles/CalendarPop/Back.png" id="2_bdqrv"]
-[ext_resource type="Texture2D" uid="uid://ktvjpyun302" path="res://addons/CalendarPickerFiles/CalendarPop/Forward.png" id="3_8enjx"]
+[ext_resource type="Script" path="res://addons/DatePickerFiles/CalendarPop/test.gd" id="1_67bx5"]
+[ext_resource type="Texture2D" uid="uid://c7f23gmik4tr7" path="res://addons/DatePickerFiles/CalendarPop/Back.png" id="2_bdqrv"]
+[ext_resource type="Texture2D" uid="uid://ktvjpyun302" path="res://addons/DatePickerFiles/CalendarPop/Forward.png" id="3_8enjx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbgii"]
 

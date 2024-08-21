@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://je13wqh75dgr"]
 
-[ext_resource type="Script" path="res://addons/CalendarPickerFiles/CalendarPop/CurrentButton.gd" id="1_7p021"]
+[ext_resource type="Script" path="res://addons/DatePickerFiles/CalendarPop/CurrentButton.gd" id="1_7p021"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpgin"]
 

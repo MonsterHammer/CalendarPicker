@@ -1,10 +1,10 @@
 extends Control
 
 
-var current_button = preload("res://addons/CalendarPickerFiles/CalendarPop/CurrentButton.tscn")
-var past_button = preload("res://addons/CalendarPickerFiles/CalendarPop/PastButton.tscn")
-var future_button = preload("res://addons/CalendarPickerFiles/CalendarPop/FutureButton.tscn")
-var year_button = preload("res://addons/CalendarPickerFiles/CalendarPop/year_button.tscn")
+var current_button = preload("res://addons/DatePickerFiles/CalendarPop/CurrentButton.tscn")
+var past_button = preload("res://addons/DatePickerFiles/CalendarPop/PastButton.tscn")
+var future_button = preload("res://addons/DatePickerFiles/CalendarPop/FutureButton.tscn")
+var year_button = preload("res://addons/DatePickerFiles/CalendarPop/year_button.tscn")
 
 enum button_date_type {
 	past_type,
