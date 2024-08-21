@@ -34,10 +34,10 @@ offset_bottom = -512.0
 
 [node name="TestButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 105.0
-offset_right = 192.0
-offset_bottom = 141.0
+offset_left = 485.0
+offset_top = 48.0
+offset_right = 726.0
+offset_bottom = 84.0
 text = "PRINT DATE CURRENT DATA ->"
 
 [connection signal="pressed" from="Panel/TestButton" to="." method="_on_test_button_pressed"]
